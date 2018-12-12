@@ -35,3 +35,6 @@
 #mac
 .DS_Store
 
+
+#vscdoe
+.vscode/
