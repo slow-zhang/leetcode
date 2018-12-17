@@ -3,6 +3,8 @@
 ## cmp usage
     <tamplate a>
     bool cmp()
+    // qsort cmp: int cmp()
+
 
 ## simple
     #include <algorithm>
@@ -54,3 +56,6 @@
             arra[i].show_point();
         }
     }
+
+
+
