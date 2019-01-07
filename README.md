@@ -22,7 +22,7 @@ static const auto io_sync_off = []()
 - BFS tree
 ```c++
 // return by level 
-vector<vector<int>> levelOrder(TreeNode* root) {
+vector<vector<int>> levelOrder(TreeNode* root) {
     vector< vector<int>> ans;
     if(root==NULL) return ans;
     vector<int> row; // record every level ans
@@ -68,7 +68,7 @@ while (start < end) {
 return -1;
 
 // 记录位置版本
-int pos=-1;
+int pos=-1;
 int start=0,end=size;
 // [start,end)
 while (start < end) {
