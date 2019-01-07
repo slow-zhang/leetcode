@@ -6,12 +6,8 @@
 #include <string>
 #include <sstream>
 #include "101_Symmetric_tree.cpp"
-#include "util.h"
+#include "util.h" // tree Node def
 using namespace std;
- //Definition for a binary tree node.
-
- 
-
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
