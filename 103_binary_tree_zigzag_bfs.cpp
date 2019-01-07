@@ -10,7 +10,7 @@
 class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-        
+        // 102 使用率level tree bfs 的模板，这里采用一个指针指示每层的开始，在奇数层入ans之前reverse一次，达到题目的要求，当然使用102的解法都是ok的
         queue<TreeNode*> q;
         q.push(root);
         TreeNode *level_head=NULL;
