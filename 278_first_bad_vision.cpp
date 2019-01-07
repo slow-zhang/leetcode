@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
 // Forward declaration of isBadVersion API.
 bool isBadVersion(int version);
 

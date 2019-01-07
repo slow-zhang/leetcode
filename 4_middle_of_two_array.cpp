@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+public: 
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         const int maxint=0x7fffffff;
         int l=nums1.size()+nums2.size();

@@ -21,7 +21,7 @@ public:
             if(s[i]!=s[s.size()-1-i]) return false;
         }
         return true;
-    }
+    } 
     
     int largestPalindrome(int n) {
         int intans[]= {9,987,123,597,677,1218,877,475};

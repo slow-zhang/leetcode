@@ -7,7 +7,7 @@
 
 
 class Solution{
-public:
+public: 
     vector<int> twoSum(vector<int>& nums, int target) {
         // // o(n^2)
         // for(int i=0;i<nums.size();i++){
