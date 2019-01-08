@@ -85,6 +85,26 @@ if(pos!=-1){
 }
 ```
 
+- BST :search
+
+```c++
+TreeNode* searchBST(TreeNode* root, int val) {
+    // 找不到  
+    // 这里也是val应该插入的位置 
+    if(root==NULL)
+        return NULL;   
+
+    // finded 
+    if(root->val==val)
+        return root;
+    
+    if(val <= root->val )
+        return searchBST(root->left,val);
+    else
+        return searchBST(root->right,val);
+}
+```
+
 参考
 ----
 - [vector](https://www.cnblogs.com/shrimp-can/p/5280566.html)
