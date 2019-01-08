@@ -35,6 +35,9 @@ vint v4(n); // n个 0
 max_size() //返回最大的能存储的数据量
 push_back()
 pop_back()
+//查询最大值、最小值 `*itr` 可以得到值，`itr-begin()` 也可以得到差值
+auto positr=max_element(nums.begin()+l, nums.begin()+r);
+int pos=distance(nums.begin()+l, positr);
 
 ### insert erase
 
