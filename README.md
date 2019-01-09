@@ -35,36 +35,7 @@ static const auto io_sync_off = []()
     return nullptr;
 }();
 ```
-- BFS tree
-```c++
-// return by level 
-vector<vector<int>> levelOrder(TreeNode* root) {
-    vector< vector<int>> ans;
-    if(root==NULL) return ans;
-    vector<int> row; // record every level ans
-    queue<TreeNode*> q;
-    q.push(root);
-    
-    while(!q.empty()){
-        int size=q.size();
-        // 使用size 得到每行的元素，直接按照leve进行bfs
-        for(int i=0;i<size;i++){
-            TreeNode* tmp=q.front();
-            q.pop();
-            // 下面这行替换为你需要的操作
-            row.push_back(tmp->val);
-            if(tmp->left!=NULL)
-                q.push(tmp->left);
-            if(tmp->right!=NULL)
-                q.push(tmp->right);
-        }
-       // 下面这两行替换为你需要的操作
-        ans.push_back(row);
-        row.clear();
-    }
-    return ans;
-}
-````
+
 
 - binary search
 注意这里使用前开后闭的写法
