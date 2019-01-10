@@ -23,7 +23,7 @@ vector<int> levelOrder(TreeNode* root) {
 
 - 按行输出的层序遍历
 ```c++
-// 按行输出
+// 按行输出g
 vector<vector<int>> levelOrder(TreeNode* root) {
     vector< vector<int>> ans;
     if(root==NULL) return ans;
@@ -77,6 +77,38 @@ vector<int> inorderTraversal(TreeNode* root) {
             while(tmp->left){
                 s.push(tmp->left);
                 tmp=tmp->left;
+            }
+        }
+    }
+    return ans;
+}
+```
+
+- 后序遍历
+
+```
+vector<int> postorderTraversal(TreeNode* root) {
+    if(root==NULL) return ans;
+    vector<int> ans;
+    stack<TreeNode*> s;
+    s.push(root);
+    TreeNode* pre=NULL;
+    while(!s.empty()){
+        TreeNode* tmp=s.top();
+        if( (!tmp->left && !tmp->right) 
+            || (pre!=NULL && (pre==tmp->right || pre==tmp->left)))
+        {
+            ans.push_back(tmp->val);
+            pre=tmp;
+            s.pop();
+        }
+        else 
+        {
+            if(tmp->right!=NULL){
+                s.push(tmp->right);
+            }
+            if(tmp->left!=NULL ){
+                s.push(tmp->left);
             }
         }
     }
