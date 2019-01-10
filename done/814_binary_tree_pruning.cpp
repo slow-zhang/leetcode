@@ -10,7 +10,9 @@
 class Solution {
 public:
     TreeNode* pruneTree(TreeNode* root) {
-        // 这题
+        // 这题可以通过从下到上的方式处理，如果叶节点的值为0则
+        // 删除它（返回NULL），正好是先处理子树再处理自己的过
+        // 程，使用后续遍历即可完成
         if(root==NULL) return root ;
         root->left=pruneTree(root->left);
         root->right=pruneTree(root->right);
