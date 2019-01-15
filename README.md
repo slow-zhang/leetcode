@@ -4,7 +4,7 @@ leetcode
 leetcode刷题记录与总结。
 
 比较难的题
-- tree: 124、
+- tree: 124、894
 
 
 在本地跑的一些设置
