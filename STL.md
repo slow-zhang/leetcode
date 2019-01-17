@@ -2,28 +2,32 @@
 > 每天学习一点STL 的用法，记录于此
 
 
-## universal
-size()
+## 1. universal
+- size() begin() end() 
+- itr 遍历
+    // itr 是一个指针，数组: *itr  mp: itr->first 
+    for(atuo itr=v.begin();v!=v.end();v++){
+        cout<<*itr;
+    }
+- empty 
+- erase(itr) erase(itr1,itr2) 
+- erase(xx.find())
 
-
-for(atuo itr=v.begin();v!=v.end();v++){
-    cout<<v[i];
-}
-
-## stack queue
+## 2. stack queue 
+### common
 size() 
 empyt()
 push() // 压入
 pop() // 不返回
 
-## stack 
+### stack 
 top() // 返回栈顶元素
 
-## queue
+### queue
 front() //返回队头元素
 back() //返回队尾
 
-## vetctor 
+## 3. vetctor 
 ###init :
 typedef vector<int>  vint;
 vint v1;//空
@@ -39,14 +43,10 @@ pop_back()
 auto positr=max_element(nums.begin()+l, nums.begin()+r);
 int pos=distance(nums.begin()+l, positr);
 
-### insert erase
 
-
-
-
-## map 
+## 4. map 
 > sorted by key , unique key  
-> implemented by binary search tree
+> implemented by binary search tree ?
 
 ### init
 typedef map<int,int> mpii;
@@ -56,9 +56,9 @@ mpii m(itr first,itr last);
 mpii m(mp2);
 //initialization list
 
-### fun
+### function
 max_size()
-[]
+m[]
 at()
 swap 交换两个map
 clear 
@@ -66,17 +66,21 @@ count(k) //1 find 0 not find
 itr Lower_bound & Upperbound // not find if equal
 
 ### insert
-// return pair;it.first: itr , it.second :true false
-pair<> insert (pair<k,v>(..)) //insert(pair<int, int>(1, 1)); 
-itr insert (value_type)    //map<int, string>::value_type (1, “student_one”)
-mp[k]=v     //nnlike the previous, this causes overwriting, so requires checking first
-void insert(mpitr,mpitr)
-void insert(initialization list)
-pair empalce(k,v) //effective insert
+- 常用
+    ```c++
+    if(mp.find(s)!=mp.end())
+        mp[s]++;
+    else
+        mp[s]=0;
+    ```
+- insert pair
+    // return pair;it.first: itr , it.second :true false
+    pair<> insert (pair<k,v>(..)) //insert(pair<int, int>(1, 1)); 
+- 其他
+    itr insert (value_type)    //map<int, string>::value_type (1, “student_one”)
+    mp[k]=v     //nnlike the previous, this causes overwriting, so requires checking first
+    void insert(mpitr,mpitr)
+    void insert(initialization list)
+    pair empalce(k,v) //effective insert
 
-
-#earse 
-mp.erase(mapStudent.find(k));
-mp.erase(1);
-mapStudent.earse(itr,itr);
 
