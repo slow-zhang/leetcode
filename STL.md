@@ -83,4 +83,24 @@ itr Lower_bound & Upperbound // not find if equal
     void insert(initialization list)
     pair empalce(k,v) //effective insert
 
+## string 
+
+### init 
+- string s1;
+- string s2(s1);
+- string s3("ssss");
+- string s4(n,'c'); //n个'c'
+
+### fun
+- s1+="under flow"连接
+- s.earse(itr) / (itr,itr) / (n1,n2)   区间的话都是[n1,n2)
+- s.find("abc") //找第一个abc
+- reverse(itr,itr) [)
+### 修改
+- s.append(s2) 
+- s2=s.sbustr(i,j)  // [i,i+j)
+- s.replace(i,j,s2)  // [i,i+j) to s2
+- assign // (s2) (s2,l) (s2,i,j) (n,'c')
+- insert // (p,str) (p,str,i,j) (p,"abc",l) (p,"abc") 
+        (p,n,'c') (itr,n,'c') (itr,c) (itr,itr1,itr2)
 
