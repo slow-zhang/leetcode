@@ -1,6 +1,32 @@
 
+<!-- TOC -->
 
-- BFS、层序遍历 
+- [BST :search](#bst-search)
+- [BFS、层序遍历](#bfs层序遍历)
+- [按行输出的层序遍历](#按行输出的层序遍历)
+- [中序遍历、二叉搜索树模板](#中序遍历二叉搜索树模板)
+- [后序遍历](#后序遍历)
+
+<!-- /TOC -->
+
+####   BST :search
+
+```c++
+TreeNode* searchBST(TreeNode* root, int val) {
+    // 找不到  // 这里也是val应该插入的位置 
+    if(root==NULL)
+        return NULL;   
+    // finded 
+    if(root->val==val)
+        return root;
+    if(val <= root->val )
+        return searchBST(root->left,val);
+    else
+        return searchBST(root->right,val)
+}
+```
+
+####  BFS、层序遍历 
 ```c++
 vector<int> levelOrder(TreeNode* root) {
     vector<int> ans;
@@ -21,7 +47,7 @@ vector<int> levelOrder(TreeNode* root) {
 }
 ````
 
-- 按行输出的层序遍历
+#### 按行输出的层序遍历
 ```c++
 // 按行输出g
 vector<vector<int>> levelOrder(TreeNode* root) {
@@ -50,7 +76,7 @@ vector<vector<int>> levelOrder(TreeNode* root) {
 }
 ````
 
-- 中序遍历、二叉搜索树模板 
+####  中序遍历、二叉搜索树模板 
 
 ```c++
 // 二叉搜索树的中序遍历时有序序列
@@ -84,9 +110,9 @@ vector<int> inorderTraversal(TreeNode* root) {
 }
 ```
 
-- 后序遍历
+####  后序遍历
 
-```
+```c++
 vector<int> postorderTraversal(TreeNode* root) {
     if(root==NULL) return ans;
     vector<int> ans;

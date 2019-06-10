@@ -1,51 +1,30 @@
 leetcode
-========
+=======
 leetcode刷题记录与总结。
 
-比较难的题
----------
+<!-- TOC -->
+autoauto- [比较难的题](#比较难的题)auto- [常用概念](#常用概念)auto- [算法](#算法)auto    - [二分](#二分)auto    - [组合数、快速](#组合数快速)auto- [数据结构](#数据结构)auto    - [并查集](#并查集)auto    - [TODO](#todo)auto        - [树状数组](#树状数组)auto        - [线段树](#线段树)auto- [其他](#其他)auto    - [加速io](#加速io)auto- [参考](#参考)autoauto
+<!-- /TOC -->
+
+
+###  比较难的题
+
 - tree: 124、894
+- 状态压缩dp
+https://www.cnblogs.com/ibilllee/p/7651971.html
 
-常用概念
--------
+###  常用概念
+
 1. int 最大最小 0x7fffffff 0x80000000
+2. 将最低位设置为0  x&(x-1) 、 返回最低位包括：x^(x&(x-1)) 后者 x^(-x)
+3. 
 
 
-在本地跑的一些设置
---------
-#### 1. 普通：
-- 将leetcode白板中的内容copy到一个文件中，
-- 修改main.cpp 中的最后一个include 内容为刚刚的文件，
-- 输入
-```bash
-g++ main.cpp -std=c++11
-./a.out 
-```
--  将TestCase按行输入
-
-####2. 树：
-区别是不适用main.cpp 改而使用main_tree.cpp,其中树节点的定义在util.h 中。
-
-####3. 图： 
-暂未涉及。
-
-一些模板的总结
---------
-
-- 加速io操作
-```c++
-static const auto io_sync_off = []()
-{
-    // turn off sync
-    std::ios::sync_with_stdio(false);
-    // untie in/out streams
-    std::cin.tie(nullptr);
-    return nullptr;
-}();
-```
 
 
-- binary search
+###  算法
+
+####   二分
 注意这里使用前开后闭的写法
 ```c++
 // 函数返回版本
@@ -79,29 +58,71 @@ if(pos!=-1){
     //...
 }
 ```
+#### 组合数、快速
+杨辉三角
 
-- BST :search
 
+### 数据结构
+  
+####  并查集
 ```c++
-TreeNode* searchBST(TreeNode* root, int val) {
-    // 找不到  
-    // 这里也是val应该插入的位置 
-    if(root==NULL)
-        return NULL;   
+int father[Size]; // init to self father[a]=a
+int findf(int t){
+    while(father[t]!=t){
+        father[t]=father[father[t]];
+        t=father[t];
+    }
+    return t;
+}
 
-    // finded 
-    if(root->val==val)
-        return root;
-    
-    if(val <= root->val )
-        return searchBST(root->left,val);
-    else
-        return searchBST(root->right,val);
+void Union(int a,int b){
+    int fa=findf(a);
+    int fb=findf(b);
+    father[fa]=fb;
 }
 ```
+#### TODO
+##### 树状数组
 
-参考
-----
-- [vector](https://www.cnblogs.com/shrimp-can/p/5280566.html)
-- [vector-官方文档](http://www.cplusplus.com/reference/vector/vector/)
+```c++
+int lowbit(int x) // 只有最低位1代表的值
+{
+	return x&(-x);
+}
+void add(int x) // 向上更新
+{
+	while(x<100005){
+		c[x]+=1;
+		x+=lowbit(x);
+	}
+}
+int summ(int x)
+{
+	int sum=0;
+	while(x>0){ // 向下就和 范围不能从0开始
+		sum+=c[x];
+		x-=lowbit(x);
+	}
+	return sum;
+```
+
+##### 线段树
+
+
+### 其他
+
+#### 加速io
+
+```c++
+static const auto io_sync_off = []()
+{
+    // turn off sync
+    std::ios::sync_with_stdio(false);
+    // untie in/out streams
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+```
+
+### 参考
 - [io accelerate](https://blog.csdn.net/qq_32320399/article/details/81518476)

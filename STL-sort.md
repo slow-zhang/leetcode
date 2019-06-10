@@ -57,5 +57,19 @@
         }
     }
 
+### example
+- modn sort
+class ModN{
+priviate: unsigned n;
+public:
+    ModN(unsigned _n):n(_n){}
+    bool operator()(unsigned& a1,unsigned& a2){
+        return (a1%n)<(a2%n);
+    }
+}
+
+sort(a,a+100,ModN(10))
+
+- 
 
 
